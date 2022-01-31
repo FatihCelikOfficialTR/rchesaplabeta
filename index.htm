@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RCHesapla - Oyun Hesapla!</title>
+    <title>RCHesapla - Kişisel oyun hesaplayıcısı!</title>
     <style type="text/css">
         table, th, td {
         border: 2px;
@@ -50,7 +50,6 @@
       transform: translateY(4px);
       }
     </style>
-    
     <script>
       
       //Points Per Win Functions
@@ -112,6 +111,12 @@
       { 
        document.getElementById("SurferPoints").value=
        document.getElementById("Surfer-lvl").value;
+      }
+	  
+	  function LamboSelect()
+      { 
+       document.getElementById("LamboRiderPoints").value=
+       document.getElementById("LamboRider-lvl").value;
       }
 
       //Lvl Conquered Functions
@@ -175,37 +180,43 @@
        document.getElementById("TripleSurfer").value = 3*document.getElementById("Surfer-lvl").value
         if (isNaN(document.getElementById("TripleSurfer").value)) document.getElementById("TripleSurfer").value = 0; 
       }
+	  
+	  function TripleLambo()
+      { 
+       document.getElementById("TripleLambo").value = 3*document.getElementById("LamboRider-lvl").value
+        if (isNaN(document.getElementById("TripleLambo").value)) document.getElementById("TripleLambo").value = 0; 
+      }
     </script>
-    
-    
   </head>
   <body>
- <!-- <a href="fatihçelik"><button class="button">Comparisons</button></a>
-    <a href="fatihçelik"><button class="button">Strategy</button></a>-->    
+ <!--
+ <a href="fatihçelik"><button class="button">Comparisons</button></a>
+ <a href="fatihçelik"><button class="button">Strategy</button></a>
+ -->    
     <table id="table" class="display">
       <thead>
       <tr>
-        <th>RollerCoin Games</th>
-        <th>Select Lvl</th>
-        <th>Points Per Win</th>
-        <th>Lvl Conquered</th>
+        <th>Rollercoin Oyunları</th>
+        <th>Level Seç</th>
+        <th>Kazanacağın Puan</th>
+        <th>Seviye Tamamlandığında</th>
       </tr>
       </thead>
       <tbody>
         <tr>
         <td><img src="https://user-images.githubusercontent.com/79811052/109886725-c7b04780-7c3d-11eb-8d1e-608052320cb1.png" alt="Coinclick" width="206" height="100"></td>
         <td><select size="1" id="Coinclick-lvl" name="Coinclick-lvl" onclick="CoinSelect();TripleCoin();">
-          <option value ="0"> Lvls </option>
-          <option value ="600"> 1 </option>
-          <option value ="640"> 2 </option>
-          <option value ="680"> 3 </option>
-          <option value ="700"> 4 </option>
-          <option value ="720"> 5 </option>
-          <option value ="780"> 6 </option>
-          <option value ="800"> 7 </option>
-          <option value ="820"> 8 </option>
-          <option value ="840"> 9 </option>
-          <option value ="880"> 10 </option>
+          <option value ="0"> Level Seç </option>
+          <option value ="360"> 1 </option>
+          <option value ="Hesaplanmadı.."> 2 </option>
+          <option value ="Hesaplanmadı.."> 3 </option>
+          <option value ="Hesaplanmadı.."> 4 </option>
+          <option value ="Hesaplanmadı.."> 5 </option>
+          <option value ="Hesaplanmadı.."> 6 </option>
+          <option value ="Hesaplanmadı.."> 7 </option>
+          <option value ="Hesaplanmadı.."> 8 </option>
+          <option value ="Hesaplanmadı.."> 9 </option>
+          <option value ="Hesaplanmadı.."> 10 </option>
           </select></td>
           <td><input type="text" name="CoinPoints" id="CoinPoints" value="0"></td>
           <td><input type="text" name="TripleCoin" id="TripleCoin" value="0"></td>
@@ -213,17 +224,17 @@
       <tr>
         <td><img src="https://user-images.githubusercontent.com/79811052/109886758-d39c0980-7c3d-11eb-8ab0-2d2fb612807c.png" alt="Token Blaster" width="206" height="100"></td>
         <td><select size="1" id="Blaster-lvl" name="Blaster-lvl" onclick="BlasterSelect();TripleBlaster();">
-          <option value ="0"> Lvls </option>
-          <option value="700"> 1 </option>
-          <option value ="756"> 2 </option>
-          <option value ="812"> 3 </option>
-          <option value ="896"> 4 </option>
-          <option value ="957"> 5 </option>
-          <option value ="1023"> 6 </option>
-          <option value ="1075"> 7 </option>
-          <option value ="1138"> 8 </option>
-          <option value ="1200"> 9 </option>
-          <option value ="2400"> 10 </option>
+          <option value ="0"> Level Seç </option>
+          <option value="784"> 1 </option>
+          <option value ="Hesaplanmadı.."> 2 </option>
+          <option value ="Hesaplanmadı.."> 3 </option>
+          <option value ="Hesaplanmadı.."> 4 </option>
+          <option value ="Hesaplanmadı.."> 5 </option>
+          <option value ="Hesaplanmadı.."> 6 </option>
+          <option value ="Hesaplanmadı.."> 7 </option>
+          <option value ="Hesaplanmadı.."> 8 </option>
+          <option value ="Hesaplanmadı.."> 9 </option>
+          <option value ="Hesaplanmadı.."> 10 </option>
           </select></td>
          <td><input type="text" name="BlasterPoints" id="BlasterPoints" value="0"></td>
          <td><input type="text" name="TripleBlaster" id="TripleBlaster" value="0"></td>
@@ -231,17 +242,17 @@
         <tr>
           <td><img src="https://user-images.githubusercontent.com/79811052/109886779-dbf44480-7c3d-11eb-9d2c-c109bcc49c23.png" alt="Flappy Rocket" width="206" height="100"></td>
           <td><select size="1" id="Flappy-lvl" name="Flappy-lvl" onclick="FlappySelect();TripleFlappy();">
-          <option value ="0"> Lvls </option>
-          <option value="704"> 1 </option>
-          <option value ="768"> 2 </option>
-          <option value ="819"> 3 </option>
-          <option value ="882"> 4 </option>
-          <option value ="930"> 5 </option>
-          <option value ="992"> 6 </option>
-          <option value ="1037"> 7 </option>
-          <option value ="1098"> 8 </option>
-          <option value ="1140"> 9 </option>
-          <option value ="1200"> 10 </option>
+          <option value ="0"> Level Seç </option>
+          <option value="495"> 1 </option>
+          <option value ="Hesaplanmadı.."> 2 </option>
+          <option value ="Hesaplanmadı.."> 3 </option>
+          <option value ="Hesaplanmadı.."> 4 </option>
+          <option value ="Hesaplanmadı.."> 5 </option>
+          <option value ="Hesaplanmadı.."> 6 </option>
+          <option value ="Hesaplanmadı.."> 7 </option>
+          <option value ="Hesaplanmadı.."> 8 </option>
+          <option value ="Hesaplanmadı.."> 9 </option>
+          <option value ="Hesaplanmadı.."> 10 </option>
           </select></td>
            <td><input type="text" name="FlappyPoints" id="FlappyPoints" value="0"></td>
            <td><input type="text" name="TripleFlappy" id="TripleFlappy" value="0"></td>
@@ -249,17 +260,17 @@
         <tr>
         <td><img src="https://user-images.githubusercontent.com/79811052/109886807-e3b3e900-7c3d-11eb-817d-1ddb055abb53.png" alt="Cryptonoid" width="206" height="100"></td>
         <td><select size="1" id="Cryptonoid-lvl" name="Cryptonoid-lvl" onclick="CryptonoidSelect();TripleCryptonoid();">
-          <option value ="0"> Lvls </option>
-          <option value="912"> 1 </option>
-          <option value ="936"> 2 </option>
-          <option value ="984"> 3 </option>
-          <option value ="1008"> 4 </option>
-          <option value ="1032"> 5 </option>
-          <option value ="1080"> 6 </option>
-          <option value ="1472"> 7 </option>
-          <option value ="1504"> 8 </option>
-          <option value ="1568"> 9 </option>
-          <option value ="1600"> 10 </option>
+          <option value ="0"> Level Seç </option>
+          <option value="1128"> 1 </option>
+          <option value ="Hesaplanmadı.."> 2 </option>
+          <option value ="Hesaplanmadı.."> 3 </option>
+          <option value ="Hesaplanmadı.."> 4 </option>
+          <option value ="Hesaplanmadı.."> 5 </option>
+          <option value ="Hesaplanmadı.."> 6 </option>
+          <option value ="Hesaplanmadı.."> 7 </option>
+          <option value ="Hesaplanmadı.."> 8 </option>
+          <option value ="Hesaplanmadı.."> 9 </option>
+          <option value ="Hesaplanmadı.."> 10 </option>
           </select></td>
            <td><input type="text" name="CryptonoidPoints" id="CryptonoidPoints" value="0"></td>
            <td><input type="text" name="TripleCryptonoid" id="TripleCryptonoid" value="0"></td>  
@@ -267,17 +278,17 @@
         <tr>
         <td><img src="https://user-images.githubusercontent.com/79811052/109886825-eadaf700-7c3d-11eb-8122-8c697fb9ed1c.png" alt="Coin-Match" width="206" height="100"></td>
         <td><select size="1" id="Match-lvl" name="Match-lvl" onclick="MatchSelect();TripleMatch();">
-          <option value ="0"> Lvls </option>
-          <option value="720"> 1 </option>
-          <option value ="793"> 2 </option>
-          <option value ="806"> 3 </option>
-          <option value ="819"> 4 </option>
-          <option value ="832"> 5 </option>
-          <option value ="910"> 6 </option>
-          <option value ="924"> 7 </option>
-          <option value ="938"> 8 </option>
-          <option value ="1020"> 9 </option>
-          <option value ="1035"> 10 </option>
+          <option value ="0"> Level Seç </option>
+          <option value="360"> 1 </option>
+          <option value ="Hesaplanmadı.."> 2 </option>
+          <option value ="Hesaplanmadı.."> 3 </option>
+          <option value ="Hesaplanmadı.."> 4 </option>
+          <option value ="Hesaplanmadı.."> 5 </option>
+          <option value ="Hesaplanmadı.."> 6 </option>
+          <option value ="Hesaplanmadı.."> 7 </option>
+          <option value ="Hesaplanmadı.."> 8 </option>
+          <option value ="Hesaplanmadı.."> 9 </option>
+          <option value ="Hesaplanmadı.."> 10 </option>
           </select></td>
            <td><input type="text" name="MatchPoints" id="MatchPoints" value="0"></td>
            <td><input type="text" name="TripleMatch" id="TripleMatch" value="0"></td>  
@@ -285,17 +296,17 @@
         <tr>
         <td><img src="https://user-images.githubusercontent.com/79811052/109886848-f1696e80-7c3d-11eb-8bb7-9493646a0b42.png" alt="Crypto Hamster" width="206" height="100"></td>
         <td><select size="1" id="Crypto-lvl" name="Crypto-lvl" onclick="CryptoSelect();TripleCrypto();">
-          <option value ="0"> Lvls </option>
-          <option value="900"> 1 </option>
-          <option value ="959"> 2 </option>
-          <option value ="1021"> 3 </option>
-          <option value ="1084"> 4 </option>
-          <option value ="1148"> 5 </option>
-          <option value ="Unknown"> 6 </option>
-          <option value ="Unknown"> 7 </option>
-          <option value ="Unknown"> 8 </option>
-          <option value ="Unknown"> 9 </option>
-          <option value ="Unknown"> 10 </option>
+          <option value ="0"> Level Seç </option>
+          <option value="1015"> 1 </option>
+          <option value ="Hesaplanmadı.."> 2 </option>
+          <option value ="Hesaplanmadı.."> 3 </option>
+          <option value ="Hesaplanmadı.."> 4 </option>
+          <option value ="Hesaplanmadı.."> 5 </option>
+          <option value ="Hesaplanmadı.."> 6 </option>
+          <option value ="Hesaplanmadı.."> 7 </option>
+          <option value ="Hesaplanmadı.."> 8 </option>
+          <option value ="Hesaplanmadı.."> 9 </option>
+          <option value ="Hesaplanmadı.."> 10 </option>
           </select></td>
            <td><input type="text" name="CryptoPoints" id="CryptoPoints" value="0"></td>
            <td><input type="text" name="TripleCrypto" id="TripleCrypto" value="0"></td>  
@@ -303,17 +314,17 @@
         <tr>
         <td><img src="https://user-images.githubusercontent.com/79811052/109886868-f9291300-7c3d-11eb-87fc-07afc17012d6.png" alt="2048 Coins" width="206" height="100"></td>
         <td><select size="1" id="TwentyFourtyEight-lvl" name="TwentyFourtyEight-lvl" onclick="TwentyFourtyEightSelect();TripleTwentyFourtyEight();">
-          <option value ="0"> Lvls </option>
-          <option value="800"> 1 </option>
-          <option value ="850"> 2 </option>
-          <option value ="900"> 3 </option>
-          <option value ="950"> 4 </option>
-          <option value ="Unknown"> 5 </option>
-          <option value ="Unknown"> 6 </option>
-          <option value ="Unknown"> 7 </option>
-          <option value ="Unknown"> 8 </option>
-          <option value ="Unknown"> 9 </option>
-          <option value ="Unknown"> 10 </option>
+          <option value ="0"> Level Seç </option>
+          <option value="336"> 1 </option>
+          <option value ="Hesaplanmadı.."> 2 </option>
+          <option value ="Hesaplanmadı.."> 3 </option>
+          <option value ="Hesaplanmadı.."> 4 </option>
+          <option value ="Hesaplanmadı.."> 5 </option>
+          <option value ="Hesaplanmadı.."> 6 </option>
+          <option value ="Hesaplanmadı.."> 7 </option>
+          <option value ="Hesaplanmadı.."> 8 </option>
+          <option value ="Hesaplanmadı.."> 9 </option>
+          <option value ="Hesaplanmadı.."> 10 </option>
           </select></td>
            <td><input type="text" name="TwentyFourtyEightPoints" id="TwentyFourtyEightPoints" value="0"></td>
            <td><input type="text" name="TripleTwentyFourtyEight" id="TripleTwentyFourtyEight" value="0"></td>  
@@ -321,17 +332,17 @@
         <tr>
         <td><img src="https://user-images.githubusercontent.com/79811052/109886882-00e8b780-7c3e-11eb-8859-7f3aea6c3f70.png" alt="Coin-Flip" width="206" height="100"></td>
         <td><select size="1" id="Flip-lvl" name="Flip-lvl" onclick="FlipSelect();TripleFlip();">
-          <option value ="0"> Lvls </option>
-          <option value="900"> 1 </option>
-          <option value ="912"> 2 </option>
-          <option value ="912"> 3 </option>
-          <option value ="1232"> 4 </option>
-          <option value ="1232"> 5 </option>
-          <option value ="1248"> 6 </option>
-          <option value ="1248"> 7 </option>
-          <option value ="1580"> 8 </option>
-          <option value ="1580"> 9 </option>
-          <option value ="1600"> 10 </option>
+          <option value ="0"> Level Seç </option>
+          <option value="252"> 1 </option>
+          <option value ="Hesaplanmadı.."> 2 </option>
+          <option value ="Hesaplanmadı.."> 3 </option>
+          <option value ="Hesaplanmadı.."> 4 </option>
+          <option value ="Hesaplanmadı.."> 5 </option>
+          <option value ="Hesaplanmadı.."> 6 </option>
+          <option value ="Hesaplanmadı.."> 7 </option>
+          <option value ="Hesaplanmadı.."> 8 </option>
+          <option value ="Hesaplanmadı.."> 9 </option>
+          <option value ="Hesaplanmadı.."> 10 </option>
           </select></td>
            <td><input type="text" name="FlipPoints" id="FlipPoints" value="0"></td>
            <td><input type="text" name="TripleFlip" id="TripleFlip" value="0"></td>  
@@ -339,17 +350,17 @@
         <tr>
         <td><img src="https://user-images.githubusercontent.com/79811052/109886891-06460200-7c3e-11eb-8b0c-695f4e9e2f7b.png" alt="Dr.Hamster" width="206" height="100"></td>
         <td><select size="1" id="Dr-lvl" name="Dr-lvl" onclick="DrSelect();TripleDr();">
-          <option value ="0"> Lvls </option>
-          <option value="896"> 1 </option>
-          <option value ="981"> 2 </option>
-          <option value ="1059"> 3 </option>
-          <option value ="1132"> 4 </option>
-          <option value ="1198"> 5 </option>
-          <option value ="1259"> 6 </option>
-          <option value ="1313"> 7 </option>
-          <option value ="1362"> 8 </option>
-          <option value ="1404"> 9 </option>
-          <option value ="1440"> 10 </option>
+          <option value ="0"> Level Seç </option>
+          <option value="502"> 1 </option>
+          <option value ="Hesaplanmadı.."> 2 </option>
+          <option value ="Hesaplanmadı.."> 3 </option>
+          <option value ="Hesaplanmadı.."> 4 </option>
+          <option value ="Hesaplanmadı.."> 5 </option>
+          <option value ="Hesaplanmadı.."> 6 </option>
+          <option value ="Hesaplanmadı.."> 7 </option>
+          <option value ="Hesaplanmadı.."> 8 </option>
+          <option value ="Hesaplanmadı.."> 9 </option>
+          <option value ="Hesaplanmadı.."> 10 </option>
           </select></td>
            <td><input type="text" name="DrPoints" id="DrPoints" value="0"></td>
            <td><input type="text" name="TripleDr" id="TripleDr" value="0"></td>  
@@ -357,20 +368,38 @@
         <tr>
         <td><img src="https://user-images.githubusercontent.com/79811052/109886900-0c3be300-7c3e-11eb-96fe-a5c3f0e42d19.png" alt="Token Surfer" width="206" height="100"></td>
         <td><select size="1" id="Surfer-lvl" name="Surfer-lvl" onclick="SurferSelect();TripleSurfer();">
-          <option value ="0"> Lvls </option>
-          <option value="840"> 1 </option>
-          <option value ="910"> 2 </option>
-          <option value ="980"> 3 </option>
-          <option value ="1050"> 4 </option>
-          <option value ="Unknown"> 5 </option>
-          <option value ="Unknown"> 6 </option>
-          <option value ="Unknown"> 7 </option>
-          <option value ="Unknown"> 8 </option>
-          <option value ="Unknown"> 9 </option>
-          <option value ="Unknown"> 10 </option>
+          <option value ="0"> Level Seç </option>
+          <option value="588"> 1 </option>
+          <option value ="Hesaplanmadı.."> 2 </option>
+          <option value ="Hesaplanmadı.."> 3 </option>
+          <option value ="Hesaplanmadı.."> 4 </option>
+          <option value ="Hesaplanmadı.."> 5 </option>
+          <option value ="Hesaplanmadı.."> 6 </option>
+          <option value ="Hesaplanmadı.."> 7 </option>
+          <option value ="Hesaplanmadı.."> 8 </option>
+          <option value ="Hesaplanmadı.."> 9 </option>
+          <option value ="Hesaplanmadı.."> 10 </option>
           </select></td>
            <td><input type="text" name="SurferPoints" id="SurferPoints" value="0"></td>
            <td><input type="text" name="TripleSurfer" id="TripleSurfer" value="0"></td>  
+        </tr>
+		<tr>
+        <td><img src="./img/lamborider.png" alt="Token Surfer" width="206" height="100"></td>
+        <td><select size="1" id="LamboRider-lvl" name="LamboRider-lvl" onclick="LamboSelect();TripleLambo();">
+          <option value ="0"> Level Seç </option>
+          <option value="680"> 1 </option>
+          <option value ="Hesaplanmadı.."> 2 </option>
+          <option value ="Hesaplanmadı.."> 3 </option>
+          <option value ="Hesaplanmadı.."> 4 </option>
+          <option value ="Hesaplanmadı.."> 5 </option>
+          <option value ="Hesaplanmadı.."> 6 </option>
+          <option value ="Hesaplanmadı.."> 7 </option>
+          <option value ="Hesaplanmadı.."> 8 </option>
+          <option value ="Hesaplanmadı.."> 9 </option>
+          <option value ="Hesaplanmadı.."> 10 </option>
+          </select></td>
+           <td><input type="text" name="LamboRiderPoints" id="LamboRiderPoints" value="0"></td>
+           <td><input type="text" name="TripleLambo" id="TripleLambo" value="0"></td>  
         </tr>
       </tbody>
     </table>
